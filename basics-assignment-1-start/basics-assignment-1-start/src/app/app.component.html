@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Assignment 1: Message Ninja</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <input type="button" class="btn btn-info" (click)="toggleBool()" value="Toggle Success / Warning">
+      <div *ngIf="messageBool">
+        <app-success-alert></app-success-alert>
+      </div>
+      <div *ngIf="!messageBool">
+        <app-warning-alert></app-warning-alert>
+      </div>
+    </div>
+  </div>
+</div>

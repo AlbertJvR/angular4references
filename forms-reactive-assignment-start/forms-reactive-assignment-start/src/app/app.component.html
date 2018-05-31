@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="randomForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="projectName">Project Name</label>
+          <input
+            type="text"
+            id="projectName"
+            formControlName="projectName"
+            class="form-control">
+          <span
+            class="help-block"
+            *ngIf="randomForm.get('projectName').invalid
+                && randomForm.get('projectName').touched">
+            <span
+              *ngIf="randomForm.get('projectName').errors['required']">
+              Project Name is a required field!
+            </span>
+            <span
+              *ngIf="randomForm.get('projectName').errors['forbiddenName']">
+              The chosen name is forbidden!
+            </span>
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="email">Mail</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            class="form-control">
+            <span
+              class="help-block"
+              *ngIf="randomForm.get('email').invalid
+                  && randomForm.get('email').touched">
+              Please enter a valid email!
+            </span>
+        </div>
+        <div class="form-group">
+          <label for="projectStatus">Project Status</label>
+          <select class="form-control" formControlName="projectStatus">
+            <option [value]="status" *ngFor="let status of projectStatuses">{{ status }}</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
