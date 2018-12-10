@@ -12,8 +12,8 @@ export class AppComponent implements OnInit {
   loadedFeature = 'recipe';
   ngOnInit() {
     firebase.initializeApp({
-      apiKey: 'AIzaSyDVwjnnSlaQJ3o8LiNP8Ruy4ZT-GuMrNAU',
-      authDomain: 'udemy-ng-http-122c2.firebaseapp.com'
+      apiKey: 'YOUR-API-KEY-HERE',
+      authDomain: 'YOUR-FIREBASE-APP-DOMAIN-HERE'
     });
   }
   onNavigate(feature: string) {
